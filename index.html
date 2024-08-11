@@ -1,28 +1,85 @@
-
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
     <meta charset="utf-8">
-
-    <title>Image gallery</title>
-
+    <title>Samsung Galaxy S23 Ultra Image Gallery</title>
     <link rel="stylesheet" href="style.css">
-    
   </head>
 
   <body>
-    <h1>SAMSUNG GALAXY S23 ULTRA IMAGE GALLERY</h1>
+    <!-- Header Section -->
+    <div class="header-box">
+      <h1>SAMSUNG GALAXY S23 ULTRA IMAGE GALLERY</h1>
+    </div>
 
+    <!-- Full Image Display Section -->
     <div class="full-img">
-      <img class="displayed-img" src="images/pic1.jpg" alt="Closeup of a human eye">
+      <img class="displayed-img" src="images/pic1.jpg" alt="Samsung Galaxy S23 Ultra - Front View">
       <div class="overlay"></div>
       <button class="dark">Darken</button>
     </div>
 
+    <!-- Thumbnail Bar Section -->
     <div class="thumb-bar">
-
-
+      <img src="images/pic1.jpg" alt="Front View" onclick="changeImage('images/pic1.jpg', 'Samsung Galaxy S23 Ultra - Front View')">
+      <img src="images/pic2.jpg" alt="Back View" onclick="changeImage('images/pic2.jpg', 'Samsung Galaxy S23 Ultra - Back View')">
+      <img src="images/pic3.jpg" alt="Side View" onclick="changeImage('images/pic3.jpg', 'Samsung Galaxy S23 Ultra - Side View')">
+      <img src="images/pic4.jpg" alt="Camera Close-up" onclick="changeImage('images/pic4.jpg', 'Samsung Galaxy S23 Ultra - Camera Close-up')">
+      <img src="images/pic5.jpg" alt="S Pen Feature" onclick="changeImage('images/pic5.jpg', 'Samsung Galaxy S23 Ultra - S Pen Feature')">
     </div>
-    <script src="main.js"></script>
+
+    <!-- Features and Specifications Section -->
+    <div class="specs-box">
+      <h2>Features & Specifications</h2>
+      <ul id="specs-list">
+        <li>Display: 6.8-inch Dynamic AMOLED 2X, 120Hz, HDR10+</li>
+        <li>Camera: 200MP Wide, 12MP Ultra-wide, 10MP Periscope Telephoto, 10MP Telephoto</li>
+        <li>Processor: Qualcomm Snapdragon 8 Gen 2</li>
+        <li>Battery: 5000mAh with 45W Fast Charging</li>
+        <li>S Pen: Enhanced precision and usability</li>
+        <li>Storage: Up to 1TB with 12GB RAM</li>
+        <li>OS: Android 13 with One UI 5.1</li>
+      </ul>
+    </div>
+
+    <script>
+      function changeImage(src, alt) {
+        const displayedImg = document.querySelector('.displayed-img');
+        displayedImg.src = src;
+        displayedImg.alt = alt;
+
+        // Update specs for each image
+        const specsList = document.getElementById('specs-list');
+        if (alt.includes('Front View')) {
+          specsList.innerHTML = `
+            <li>Display: 6.8-inch Dynamic AMOLED 2X, 120Hz, HDR10+</li>
+            <li>Front Camera: 12MP with Dual Pixel Autofocus</li>
+            <li>Processor: Qualcomm Snapdragon 8 Gen 2</li>
+            <li>OS: Android 13 with One UI 5.1</li>`;
+        } else if (alt.includes('Back View')) {
+          specsList.innerHTML = `
+            <li>Camera: 200MP Wide, 12MP Ultra-wide, 10MP Periscope Telephoto, 10MP Telephoto</li>
+            <li>Design: Glass front (Gorilla Glass Victus 2), glass back, aluminum frame</li>
+            <li>Battery: 5000mAh with 45W Fast Charging</li>
+            <li>Processor: Qualcomm Snapdragon 8 Gen 2</li>`;
+        } else if (alt.includes('Side View')) {
+          specsList.innerHTML = `
+            <li>Thickness: 8.9mm</li>
+            <li>Weight: 234g</li>
+            <li>Frame: Aluminum</li>
+            <li>Storage: Up to 1TB with 12GB RAM</li>`;
+        } else if (alt.includes('Camera Close-up')) {
+          specsList.innerHTML = `
+            <li>Main Camera: 200MP with f/1.7 aperture</li>
+            <li>Zoom: 10x optical, 100x digital</li>
+            <li>Video: 8K at 24fps, 4K at 60fps</li>`;
+        } else if (alt.includes('S Pen Feature')) {
+          specsList.innerHTML = `
+            <li>S Pen: Enhanced precision and usability</li>
+            <li>Latency: 2.8ms</li>
+            <li>Connectivity: Bluetooth, Air Actions</li>`;
+        }
+      }
+    </script>
   </body>
 </html>
