@@ -32,7 +32,7 @@ h1 {
 }
 
 .displayed-img {
-  width: 100%;
+  width: 150%;
   height: 150%;
   object-fit: cover;
   border-radius: 10px;
