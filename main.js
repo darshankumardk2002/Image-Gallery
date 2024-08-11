@@ -11,10 +11,10 @@ const arrpic=['images/pic1.jpg','images/pic2.jpg','images/pic3.jpg','images/pic4
 /* Declaring the alternative text for each image file */
 const objalt={
     1:"Samsung Galaxy S24 Ultra",
-    2:"iPhone 15 Pro Max",
-    3:"Google Pixel 8 Pro",
-    4:"Xiaomi 14 Ultra",
-    5:"Oneplus 12"
+    2:"Samsung Galaxy S24 Ultra",
+    3:"Samsung Galaxy S24 Ultra",
+    4:"Samsung Galaxy S24 Ultra",
+    5:"Samsung Galaxy S24 Ultra"
 }
 
 /* Looping through images */
